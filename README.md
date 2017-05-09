@@ -7,7 +7,7 @@ El proyecto consiste en realizar un buscador de material relacionado con la cien
 * [Node.js](http://nodejs.org/) (min version v0.11.0)
 * [Java Runtime Environment](https://java.com/en/) (min version 1.8)
 * [Elasticsearch](https://www.elastic.co/)
- *[Express](https://expressjs.com/)
+* [Express](https://expressjs.com/)
 
 ## Instalación
 * Clonar el repositorio
