@@ -8,12 +8,3 @@ El proyecto consiste en realizar un buscador de material relacionado con la cien
 * [Java Runtime Environment](https://java.com/en/) (min version 1.8)
 * [Elasticsearch](https://www.elastic.co/)
 * [Express](https://expressjs.com/)
-
-## Instalación
-* Clonar el repositorio
-* Usar npm install en el directorio programa
-## Uso
-* Abrir elasticsearch y mantener corriendo
-* Ejecutar en la carpeta controlador: node Buscador.js
-* Para las vistas abrirlas con el navegador (preferible ultimas versiones de cada uno)
-* Para cargar los datos: node indexador.js
