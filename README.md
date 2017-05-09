@@ -14,5 +14,5 @@ El proyecto consiste en realizar un buscador de material relacionado con la cien
 * Usar npm install en el directorio programa
 ## Uso
 * Abrir elasticsearch y mantener corriendo
-* Ejecutar en la carpeta controlador: node busqueda.js
+* Ejecutar en la carpeta controlador: node Buscador.js
 * Para las vistas abrirlas con el navegador (preferible ultimas versiones de cada uno)
