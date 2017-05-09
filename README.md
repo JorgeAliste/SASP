@@ -9,3 +9,10 @@ El proyecto consiste en realizar un buscador de material relacionado con la cien
 * [Elasticsearch](https://www.elastic.co/)
  *[Express](https://expressjs.com/)
 
+## Instalación
+* Clonar el repositorio
+* Usar npm install en el directorio
+## Uso
+* Abrir elasticsearch y mantener corriendo
+* Ejecutar en la carpeta controlador: node busqueda.js
+* Para las vistas abrirlas con el navegador (preferible ultimas versiones de cada uno)
