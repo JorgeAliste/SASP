@@ -180,44 +180,7 @@ def mergeSort(alist):
             alist[k]=righthalf[j]
             j=j+1
             k=k+1
-'''
-k = 0
-print(k)
-if k == 0:
 
-    try:
-"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSERT INTO `Enlace` (`Link`, `Titulo`, `Tipo`) VALUES ('https://es.wikipedia.or' at line 1")
-1
-        with connection.cursor() as cursor:
-            # Create a new record
-            sql = "INSERT INTO `enlace` (`Link`, `Titulo`, `Tipo`) VALUES (%s, %s, %s)"
-            cursor.execute(sql, ('webma11dbbbdcster@paaaaython.org', 'very-saaecret', 2))
-
-        # connection is not autocommit by default. So you must commit to save
-        # your changes.
-        connection.commit()
-''''''
-connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='',
-                                         db='sasp',
-                                         charset='utf8mb4',
-                                         cursorclass=pymysql.cursors.DictCursor)
-try:
-    with connection.cursor() as cursor:
-        # Read a single record
-        sql = "SELECT `Titulo`, `Link` FROM `Enlace` WHERE `Link`=%s"
-        cursor.execute(sql, ('webmaster@python.org',))
-        result = cursor.fetchone()
-        print(result["Titulo"])
-        print(result)
-        k = 1
-finally:
-    connection.close()
-k = 1
-print(k)
-''''''
-'''
 app = Flask(__name__)
 
 
