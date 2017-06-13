@@ -10,8 +10,9 @@ Los enlaces con mayor calificación se mostrarán primero.
 * [Python 3.6.1](https://www.python.org/)
 * [MySQL](https://www.mysql.com/)
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL)
-* [Flask]http://flask.pocoo.org/
-* [GoogleApiCliente]https://developers.google.com/api-client-library/python/start/installation
+* [Flask](http://flask.pocoo.org/)
+* [GoogleApiCliente](https://developers.google.com/api-client-library/python/start/installation)
 
 ## Ejecución
-1.-
+1.- Descargar y extraer el repositorio
+2.-
