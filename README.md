@@ -2,9 +2,14 @@
 Scientific Adaptative Searching Platform
 
 El proyecto consiste en realizar un buscador de material relacionado con la ciencia (especificamente: física). El buscador debe poder encontrar material en toda la web a partir de palabras claves ingresadas por un usuario buscador y además ajustarse a uno de los cuatro tipos de aprendizaje de Kolb: asimilador, divergente, convergente y acomodador.
+
+El buscador funciona mediante calificaciones a los links que visitan los usuarios. La calificación de los links será el promedio de la calificación que le den los usuarios de cierto tipo, es decir, habrá 4 calificaciones distintas dependiendo del tipo.
+Los enlaces con mayor calificación se mostrarán primero.
 ## Requerimientos
 
-* [Node.js](http://nodejs.org/) (min version v0.11.0)
-* [Java Runtime Environment](https://java.com/en/) (min version 1.8)
-* [Elasticsearch](https://www.elastic.co/)
-* [Express](https://expressjs.com/)
+* [Python 3.6.1] (https://www.python.org/)
+* [MySQL](https://www.mysql.com/)
+* [PyM]
+
+## Ejecución
+1.-
