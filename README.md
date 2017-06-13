@@ -7,9 +7,11 @@ El buscador funciona mediante calificaciones a los links que visitan los usuario
 Los enlaces con mayor calificación se mostrarán primero.
 ## Requerimientos
 
-* [Python 3.6.1] (https://www.python.org/)
+* [Python 3.6.1](https://www.python.org/)
 * [MySQL](https://www.mysql.com/)
-* [PyM]
+* [PyMySQL](https://github.com/PyMySQL/PyMySQL)
+* [Flask]http://flask.pocoo.org/
+* [GoogleApiCliente]https://developers.google.com/api-client-library/python/start/installation
 
 ## Ejecución
 1.-
