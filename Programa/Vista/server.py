@@ -44,8 +44,26 @@ def calificar_enlace(link, calificacion, tipo, mail, comentario = None):
     try:
         with connection.cursor() as cursor:
             # Insertando nueva calificacion
-            sql = "INSERT INTO `calificacion` (`Mail`, `Link`, `Nota`, `Comentario`, `Tipo`) VALUES (%s, %s, %d, %s, %s)"
+            sql = "INSERT INTO `calificacion` (`Mail`, `Link`, `Nota`, `Comentario`, `Tipo`) VALUES (%s, %s, %s, %s, %s)"
             cursor.execute(sql, (mail, link, calificacion, comentario, tipo))
+        connection.commit()
+
+        with connection.cursor() as cursor:
+            # Actualizando calificacion del link
+            if tipo == 0:
+                Prom = "CPromAcomodador"
+                sql = "UPDATE `Enlace` SET `CPromAcomodador` = (SELECT (SELECT (SELECT SUM(`Nota`) from `calificacion` where `Link` = %s) + (select(%s)))/(select (select count(`Nota`) from `calificacion` where `link` = %s) + (select %s))) where `Link` = %s"
+            elif tipo == 1:
+                Prom = "CPromAsimilador"
+                sql = "UPDATE `Enlace` SET `CPromAsimilador` = (SELECT (SELECT (SELECT SUM(`Nota`) from `calificacion` where `Link` = %s) + (select(%s)))/(select (select count(`Nota`) from `calificacion` where `link` = %s) + (select %s))) where `Link` = %s"
+            elif tipo == 2:
+                Prom = "CPromConvergente"
+                sql = "UPDATE `Enlace` SET `CPromConvergente` = (SELECT (SELECT (SELECT SUM(`Nota`) from `calificacion` where `Link` = %s) + (select(%s)))/(select (select count(`Nota`) from `calificacion` where `link` = %s) + (select %s))) where `Link` = %s"
+            elif tipo == 3:
+                Prom = "CPromDivergente"
+                sql = "UPDATE `Enlace` SET `CPromDivergente` = (SELECT (SELECT (SELECT SUM(`Nota`) from `calificacion` where `Link` = %s) + (select(%s)))/(select (select count(`Nota`) from `calificacion` where `link` = %s) + (select %s))) where `Link` = %s"
+
+            cursor.execute(sql, (link, 3, link, 1, link))
         connection.commit()
     finally:
         connection.close()
@@ -81,9 +99,9 @@ def filtrar_resultados(array_resultados, tipo):
         # Caso en que n ose encuentra en la base de datos
         if verificar_existencia(i[1]) == 0:
             #Insertar en tabla enlace
-            connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='',
+            connection = pymysql.connect(host = 'localhost',
+                                         user = 'root',
+                                         password = '',
                                          db='sasp',
                                          charset='utf8mb4',
                                          cursorclass=pymysql.cursors.DictCursor)
@@ -92,6 +110,7 @@ def filtrar_resultados(array_resultados, tipo):
                     # Insertando nuevo enlace en la base de datos
                     sql = "INSERT INTO `Enlace` (`Link`, `Titulo`, `Tipo`) VALUES (%s, %s, %s)"
                     cursor.execute(sql, (link, titulo, fTipo))
+                    sql = "INSERT INTO `Calificacion` (`Mail`, `Link`, `Nota`, `Comentario`, `Tipo`) VALUES (%s, %s, %s, %s, )"
                 connection.commit()
             finally:
                 connection.close()
@@ -182,7 +201,6 @@ def mergeSort(alist):
             k=k+1
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
