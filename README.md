@@ -11,9 +11,15 @@ Los enlaces con mayor calificación se mostrarán primero.
 * [MySQL](https://www.mysql.com/)
 * [PyMySQL](https://github.com/PyMySQL/PyMySQL)
 * [Flask](http://flask.pocoo.org/)
-* [GoogleApiCliente](https://developers.google.com/api-client-library/python/start/installation)
+* [GoogleApiCliente](https://developers.google.com/api-client-library/python/start/installation) (Python)
 
 ## Ejecución
-1.- Descargar y extraer el repositorio
+1.- Tener instalados todos los requerimientos
 
-2.-
+2.- Descargar y extraer el repositorio
+
+3.- Dirigirse al directorio ../SASP/Programa/Vista
+
+4.- Ejecutar en Python el archivo server.py
+
+5.- Seleccionar el link en consola o dirigirse a la dirección 
