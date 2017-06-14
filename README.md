@@ -22,4 +22,6 @@ Los enlaces con mayor calificación se mostrarán primero.
 
 4.- Ejecutar en Python el archivo server.py
 
-5.- Seleccionar el link en consola o dirigirse a la dirección 
+5.- Seleccionar el link en consola o dirigirse a la dirección http://127.0.0.1:5000/ (localhost) en un navegador web actualizado
+
+6.- Se abrirá la vista principal del sistema y podrá realizar búsquedas
