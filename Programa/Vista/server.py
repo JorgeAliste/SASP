@@ -145,7 +145,7 @@ def filtrar_resultados(array_resultados, tipo):
             finally:
                 connection.close()
 
-        filtrado.append((titulo, link, calificacion))
+        filtrado.append((titulo, link, i[2], calificacion))
         mergeSort(filtrado)
         filtrado = filtrado[::-1]
 
@@ -158,12 +158,15 @@ def google_search(search_term, api_key, cse_id, **kwargs):
 
 def agregar_sitios(palabra):
     lista_sitios = []
+    numero_pagina = 1  # PARA DIFERENCIAR LOS SISTEMAS DE CALIFICACION
     resultados_busqueda_1 = google_search(palabra, apiKey, cseId, num=10, filter='1', start=1)
     resultados_busqueda_2 = google_search(palabra, apiKey, cseId, num=10, filter='1', start=11)
     for i in resultados_busqueda_1:
-        lista_sitios.append((i['title'], i['link']))
+        lista_sitios.append((i['title'], i['link'], str(numero_pagina)))
+        numero_pagina += 1
     for j in resultados_busqueda_2:
-        lista_sitios.append((j['title'], j['link']))
+        lista_sitios.append((j['title'], j['link'], str(numero_pagina)))
+        numero_pagina += 1
 
     lista_sitios = filtrar_resultados(lista_sitios, 1)
     return lista_sitios
