@@ -14,7 +14,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+        <!-- <meta HTTP-EQUIV="REFRESH" content="3; url=http://localhost:5000/"> PARA REDIRIGIR A LA PAGINA PRINCIPAL DESPUES DE 3 SEGUNDOS--> 
+
         <style>
 
         /* Reset */
@@ -1695,7 +1696,6 @@
             -ms-transition: color 0.2s ease, border-bottom 0.2s ease;
             transition: color 0.2s ease, border-bottom 0.2s ease;
             text-decoration: none;
-
             color: inherit;
         }
 
@@ -2138,6 +2138,20 @@
 
         textarea {
             padding: 0.75em 1em;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            display: block;
+            float: left;
+            margin-right: -2em;
+            opacity: 0;
+            width: 1em;
+            z-index: -1;
         }
 
             input[type="checkbox"] + label,
@@ -3811,21 +3825,9 @@
 <div id="main">
      <section id="intro" class="main">
         <div class="spotlight">
-            <div class="content">
-                <h2>¿Que desea buscar?</h2>
-                <form action = "/Resultados_busqueda" method = "POST">
-                    <div class="input-group">
-                        <input type="text" class="form-control" size="50" placeholder="Ingrese búsqueda..." name="texto" required autocomplete="off">
-                        <div class="input-group-btn">
-                            <button type="submit" value="submit" class="btn btn-danger">Buscar</button>
-                        </div>
-                    </div>
-                    <input type="radio" name=tipo_busqueda value="acomodador"> Acomodador
-                    <input type="radio" name=tipo_busqueda value="asimilador"> Asimilador
-                    <input type="radio" name=tipo_busqueda value="convergente"> Convergente
-                    <input type="radio" name=tipo_busqueda value="divergente"> Divergente
-                </form>
-            </div>
+        <div class="content">
+            <h2>{{result}}</h2>
+        </div>
         </div>
     </section>
 </div>
