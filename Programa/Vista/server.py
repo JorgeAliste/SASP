@@ -261,8 +261,6 @@ def calificar():
         elif int(numero_estrellas) < 1:
             numero_estrellas = '1'
 
-        print(numero_estrellas)
-
         if calificar_enlace(enlace_calificar, numero_estrellas, tipo_busqueda, mail) == 1:
             mensaje="Calificacion exitosa"
         else:
