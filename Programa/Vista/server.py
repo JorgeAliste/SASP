@@ -9,7 +9,7 @@ apiKey = "AIzaSyC1D9EE0r9_4qmmBXrttY15ZnSfAQBLJ-Q"
 
 #Base de datos
 usuario_bd = "root"
-passwd_bd = "admin"
+passwd_bd = ""
 
 # Función que verifica la existencia de un enlace en la base de datos
 def verificar_existencia(link):
