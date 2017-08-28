@@ -37,47 +37,7 @@
             -webkit-border-radius: 4px;
             border-radius: 4px;
         }
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .rate {
-            border: 0px solid #cccccc;
-            float: left;
-            height: 46px;
-            padding: 0 10px;
-        }
-        .rate:not(:checked) > input {
-            position:absolute;
-            top:-9999px;
-        }
-        .rate:not(:checked) > label {
-            float:right;
-            width:1em;
-            overflow:hidden;
-            white-space:nowrap;
-            cursor:pointer;
-            font-size:30px;
-            color:#ccc;
-        }
-        .rate:not(:checked) > label:before {
-            content: '★ ';
-        }
-        .rate > input:checked ~ label {
-            color: #ffc700;    
-        }
-        .rate:not(:checked) > label:hover,
-        .rate:not(:checked) > label:hover ~ label {
-            color: #deb217;  
-        }
-        .rate > input:checked + label:hover,
-        .rate > input:checked + label:hover ~ label,
-        .rate > input:checked ~ label:hover,
-        .rate > input:checked ~ label:hover ~ label,
-        .rate > label:hover ~ input:checked ~ label {
-            color: #c59b08;
-        }
-
+        
         .dropdown {
             position:fixed; top:2%; right:2%; 
             display: inline-block;
@@ -92,6 +52,13 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             padding: 12px 16px;
             z-index: 1;
+
+            box-shadow: 5px 5px 10px black;
+            border: none;
+            cursor: pointer;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
         }
 
         .dropdown:hover .dropdown-content {
@@ -3834,16 +3801,8 @@
                                                 Calificacion:<br>
                                                 <input type="text" class="form-control" size="50" placeholder="Ingrese calificacion entre 0 y 5..." name="rating" required autocomplete="off"><br>
                                                 <input type="hidden" class="form-control" name="tipo_busqueda" value={{type}}>
-                                                
-                                                <!--<fieldset class="rate">
-                                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" >5 stars</label>
-                                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" >4 stars</label>
-                                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" >3 stars</label>
-                                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" >2 stars</label>
-                                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" >1 star</label>
-                                                </fieldset>
                                                 <br>
-                                                <br>-->
+
                                                 <div class="input-group-btn">
                                                     <button type="submit" value="submit" class="btn btn-danger">Enviar</button>
                                                 </div>
@@ -3854,7 +3813,7 @@
 
          						{% for titulo, url, cali in result %}
             					<ul>
-               						<li><h4> ({{cali}}) {{ titulo }}</h4></li>
+               						<li><h4> ({{cali}} ★) {{ titulo }}</h4></li>
                                     <ul style="list-style-type:none">
                                         <a href={{url}} title="Visitar sitio" target="_blank" style="text-decoration:none">{{ url }}</a>
                                     </ul>
