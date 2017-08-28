@@ -2,13 +2,14 @@ from flask import *
 from googleapiclient.discovery import build
 import pymysql.cursors
 
+#Credenciales para usar el motor de busqueda
 cseId = "015171683571889140877:1zvmx85stto"
 apiKey = "AIzaSyC1D9EE0r9_4qmmBXrttY15ZnSfAQBLJ-Q" 
-#apiKey = "AIzaSyC_4S3DH_pnusbbLswK18axTtvGtA40Qf8" RESPALDO
+#apiKey = "AIzaSyC_4S3DH_pnusbbLswK18axTtvGtA40Qf8" RESPALDO POR SI FALLA LA PRIMERA
 
 #Base de datos
 usuario_bd = "root"
-passwd_bd = "admin"
+passwd_bd = ""
 
 # Función que verifica la existencia de un enlace en la base de datos
 def verificar_existencia(link):
