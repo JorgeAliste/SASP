@@ -9,7 +9,7 @@ apiKey = "AIzaSyC1D9EE0r9_4qmmBXrttY15ZnSfAQBLJ-Q"
 
 #Base de datos
 usuario_bd = "root"
-passwd_bd = ""
+passwd_bd = "admin"
 
 # Función que verifica la existencia de un enlace en la base de datos
 def verificar_existencia(link):
@@ -109,7 +109,7 @@ def filtrar_resultados(array_resultados, tipo):
         if len(fTipo) > 5:
             fTipo = "html"
 
-        calificacion = 3
+        calificacion = 3.0
         # Caso en que n ose encuentra en la base de datos
         if verificar_existencia(i[1]) == 0:
             #Insertar en tabla enlace
@@ -174,16 +174,16 @@ def agregar_sitios(palabra, tipo):
     lista_sitios = []
 
     if tipo=="acomodador": #aca se pueden definir los criterios de busqueda para cada tipo
-        criterio_busqueda = " pdf"
+        criterio_busqueda = ""
         tipo_busqueda = 0
     elif tipo=="asimilador":
-        criterio_busqueda = " jpg"
+        criterio_busqueda = ""
         tipo_busqueda = 1
     elif tipo=="convergente":
-        criterio_busqueda = " pdf"
+        criterio_busqueda = ""
         tipo_busqueda = 2
     elif tipo=="divergente":
-        criterio_busqueda = " pdf"
+        criterio_busqueda = ""
         tipo_busqueda = 3    
 
     resultados_busqueda_1 = google_search(palabra + criterio_busqueda, apiKey, cseId, num=10, filter='1', start=1)
@@ -255,7 +255,15 @@ def calificar():
         numero_estrellas = request.form['rating']
         tipo_busqueda = request.form['tipo_busqueda']
 
-        if calificar_enlace(enlace_calificar, numero_estrellas, tipo_busqueda, mail) == 1:  #FALTA BUSCAR UNA FORMA PARA TENER EL TIPO DE BUSQUEDA ACA
+        if int(numero_estrellas) > 5:
+            numero_estrellas = '5'
+
+        elif int(numero_estrellas) < 1:
+            numero_estrellas = '1'
+
+        print(numero_estrellas)
+
+        if calificar_enlace(enlace_calificar, numero_estrellas, tipo_busqueda, mail) == 1:
             mensaje="Calificacion exitosa"
         else:
             mensaje="Calificacion fallida"
